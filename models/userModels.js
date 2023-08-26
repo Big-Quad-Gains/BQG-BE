@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../sequelizeInstance'); // Your Sequelize instance
+const EmailAddress = require('./emailAddresses'); // Import the EmailAddress model
 
 const User = sequelize.define('User', {
   // Identification
@@ -25,7 +26,9 @@ const User = sequelize.define('User', {
   languagePreference: {
     type: DataTypes.STRING,
   },
+});
 
+const PhysicalStanding = sequelize.define('PhysicalStanding', {
   // Physical Standing
   height: {
     type: DataTypes.FLOAT,
@@ -45,7 +48,9 @@ const User = sequelize.define('User', {
   knownMedicalConditions: {
     type: DataTypes.STRING,
   },
+});
 
+const WellnessInterests = sequelize.define('WellnessInterests', {
   // Wellness Interests
   hobbies: {
     type: DataTypes.STRING,
@@ -58,5 +63,31 @@ const User = sequelize.define('User', {
   },
 });
 
+const UsernameAndPassword = sequelize.define('UsernameAndPassword', {
+  // Username and Password
+  salt: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+  },
+  passwordHash: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+  },
+});
+
+// Define relationships
+User.hasOne(PhysicalStanding);
+User.hasOne(WellnessInterests);
+User.hasOne(UsernameAndPassword);
+PhysicalStanding.belongsTo(User);
+WellnessInterests.belongsTo(User);
+UsernameAndPassword.belongsTo(User);
+User.hasOne(EmailAddress, { foreignKey: 'userId' });
+EmailAddress.belongsTo(User, { foreignKey: 'userId' });
+
+// Sync models
 sequelize.sync({ alter: true });
-module.exports = User;
+
+module.exports = { User, PhysicalStanding, WellnessInterests, UsernameAndPassword };
