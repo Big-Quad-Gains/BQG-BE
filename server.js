@@ -1,11 +1,10 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
-const sequelize = require('./sequelizeInstance'); // Your Sequelize instance
-const registrationRoutes = require('./routes/registrationRoutes.js'); // Your registration routes
+const sequelize = require('./sequelizeInstance'); 
+const registrationRoutes = require('./routes/registrationRoutes.js'); 
 const whitelist = [];
-const User = require('./models/userModels'); // Import the User model
-
+const User = require('./models/userModels'); 
 const app = express();
 
 // Middleware and other configurations
@@ -16,7 +15,7 @@ app.use(cors({ origin: whitelist, credentials: true })); // required
 // Routes
 //app.use('/registration', registrationRoutes);
 
-// Sync the model with the database and start the server
+// server 
 sequelize
 .sync({ alter: true })
 .then(() => {

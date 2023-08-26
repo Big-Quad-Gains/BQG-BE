@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../sequelizeInstance'); // Your Sequelize instance
-const EmailAddress = require('./emailAddresses'); // Import the EmailAddress model
+const sequelize = require('../sequelizeInstance'); 
+const EmailAddress = require('./emailAddresses'); 
 
 const User = sequelize.define('User', {
   // Identification
@@ -77,7 +77,7 @@ const UsernameAndPassword = sequelize.define('UsernameAndPassword', {
   },
 });
 
-// Define relationships
+// relationships definitions
 User.hasOne(PhysicalStanding);
 User.hasOne(WellnessInterests);
 User.hasOne(UsernameAndPassword);
@@ -87,7 +87,6 @@ UsernameAndPassword.belongsTo(User);
 User.hasOne(EmailAddress, { foreignKey: 'userId' });
 EmailAddress.belongsTo(User, { foreignKey: 'userId' });
 
-// Sync models
 sequelize.sync({ alter: true });
 
 module.exports = { User, PhysicalStanding, WellnessInterests, UsernameAndPassword };
