@@ -1,0 +1,27 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "Adipers0n",
+    "database": "huawei_itc_test",
+    "host": "localhost",
+    "dialect": "postgres",
+    "schema": "users"
+
+  },
+  "test": {
+    "username": "postgres",
+    "password": "Adipers0n",
+    "database": "huawei_itc_test",
+    "host": "localhost",
+    "dialect": "postgres",
+    "schema": "users"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "Adipers0n",
+    "database": "huawei_itc_test",
+    "host": "localhost",
+    "dialect": "postgres",
+    "schema": "users"
+  }
+}
