@@ -98,13 +98,14 @@ app.post("/api/generate/:terminalId", async (req, res) => {
         res.status(500).json({ error: "Something went wrong" });
     }
 });
+
 // Routes
 function RoutesSetup(app) {
     app.use("/api/portal", registrationRoutes);
 }
 RoutesSetup(app);
 
-//Database connection
+// Database connection
 (async () => {
     try {
         // await User.sync();
