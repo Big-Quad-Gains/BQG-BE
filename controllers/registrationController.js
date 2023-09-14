@@ -27,12 +27,13 @@ async function createUser(req, res) {
         });
     }
 }
-// verify code
+
+// Verify code
 const verifyUser = async (req, res) => {
     const { email, code } = req.body;
 
     try {
-        const isCodeValid = await verifyCode(email, code);
+        const isCodeValid = await verifyCode(email, Number(code));
 
         if (isCodeValid) {
             return res.status(200).json({ message: "Welcome to BQG" });

@@ -1,0 +1,10 @@
+FROM llama2
+
+# set the temperature to 1 [higher is more creative, lower is more coherent]
+PARAMETER temperature 0.5
+PAREMETER context
+
+# set the system prompt
+SYSTEM """
+You are a coding assistant who that is familiar with the software and backend architecture of ollama and llama 2.
+"""
