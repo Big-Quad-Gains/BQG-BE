@@ -108,11 +108,11 @@ RoutesSetup(app);
 // Database connection
 (async () => {
     try {
-        // await User.sync();
-        // await PhysicalStanding.sync();
-        // await WellnessInterests.sync();
-        // await UsernameAndPassword.sync({ auto: true });
-        // await EmailAddress.sync();
+        await User.sync();
+        await PhysicalStanding.sync();
+        await WellnessInterests.sync();
+        await UsernameAndPassword.sync({ auto: true });
+        await EmailAddress.sync();
 
         // Start the server
         const PORT = 3200;

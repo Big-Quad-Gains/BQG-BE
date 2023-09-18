@@ -1,41 +1,42 @@
 {
-  "name": "bqg-be",
-  "version": "1.0.0",
-  "description": "- Configure APIG, CDN, and ELB to work autonomously     - Setup REST-APIs with RDS for CRUDing user-profile data - Setup ModelArts(MindSpore and Google BERT) for training    - Setup OBS and Octoparse(alongside APIG) to: connect with MyFitnessPal API & MyFoodFacts API, and parse through WebMD & Mayo Clinic - Setup CSS to fetch and index  whatever is in the RDS and OBS (idk how to do this) - Set up DLI: Decide on what kind of data to monitor and how to translate that data into valuable insights on trends and/or threats.   - OBS should be storing multiple logs for DLI to work with",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "name": "bqg-be",
+    "version": "1.0.0",
+    "description": "- Configure APIG, CDN, and ELB to work autonomously     - Setup REST-APIs with RDS for CRUDing user-profile data - Setup ModelArts(MindSpore and Google BERT) for training    - Setup OBS and Octoparse(alongside APIG) to: connect with MyFitnessPal API & MyFoodFacts API, and parse through WebMD & Mayo Clinic - Setup CSS to fetch and index  whatever is in the RDS and OBS (idk how to do this) - Set up DLI: Decide on what kind of data to monitor and how to translate that data into valuable insights on trends and/or threats.   - OBS should be storing multiple logs for DLI to work with",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js",
+        "dev": "nodemon server.js",
+        "rebuild": "ollama rm bqg && ollama create bqg -f ./modelfile.txt && ollama run bqg && clear",
+        "bqg": "ollama run bqg"
+    },
     "dev": "nodemon server.js",
-    "rebuild": "ollama rm bqg && ollama create bqg -f ./modelfile.txt && ollama run bqg && clear",
-    "bqg": "ollama run bqg"
-  },
-  "dev": "nodemon server.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^3.0.1"
-  },
-  "dependencies": {
-    "bcrypt": "^5.1.1",
-    "body-parser": "^1.20.2",
-    "child_process": "^1.0.2",
-    "cookie-parser": "^1.4.6",
-    "cookieparser": "^0.1.0",
-    "cors": "^2.8.5",
-    "crypto": "^1.0.1",
-    "crypto-random-string": "^5.0.0",
-    "express": "^4.18.2",
-    "fs": "^0.0.1-security",
-    "http": "^0.0.1-security",
-    "node-fetch": "^2.7.0",
-    "nodemailer": "^6.9.4",
-    "pg": "^8.11.3",
-    "pg-promise": "^11.5.4",
-    "readline": "^1.3.0",
-    "replicate": "^0.17.0",
-    "sequelize": "^6.32.1",
-    "ssh2": "^1.14.0"
-  }
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "nodemon": "^3.0.1"
+    },
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "body-parser": "^1.20.2",
+        "child_process": "^1.0.2",
+        "cookie-parser": "^1.4.6",
+        "cookieparser": "^0.1.0",
+        "cors": "^2.8.5",
+        "crypto": "^1.0.1",
+        "crypto-random-string": "^5.0.0",
+        "express": "^4.18.2",
+        "fs": "^0.0.1-security",
+        "http": "^0.0.1-security",
+        "node-fetch": "^2.7.0",
+        "nodemailer": "^6.9.4",
+        "obs-sdk": "^0.1.0",
+        "pg": "^8.11.3",
+        "pg-promise": "^11.5.4",
+        "readline": "^1.3.0",
+        "replicate": "^0.17.0",
+        "sequelize": "^6.32.1",
+        "ssh2": "^1.14.0"
+    }
 }

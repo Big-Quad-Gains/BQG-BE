@@ -1,0 +1,33 @@
+{
+  "name": "obs-sdk",
+  "version": "0.1.0",
+  "description": "hua wei obs sdk",
+  "main": "lib/obs",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "node ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dzy321/obs-sdk.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "hua wei",
+    "obs",
+    "sdk"
+  ],
+  "author": "wy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dzy321/obs-sdk/issues"
+  },
+  "homepage": "https://github.com/dzy321/obs-sdk#readme",
+  "dependencies": {
+    "log4js": "^1.1.1"
+  }
+}
