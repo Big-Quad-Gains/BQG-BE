@@ -4,12 +4,12 @@ const { OllamaClient } = require("ollama");
 
 /*
 const replicate = new Replicate({
-    auth: "r8_egf1tvtTyxlPf99zAibDupSVKdwuvVe4DqtlJ",
+    auth: "",
 });
 
 replicate
     .run(
-        "meta/llama-2-70b-chat:2c1608e18606fad2812020dc541930f2d0495ce32eee50074220b87300bc16e1",
+        "meta/llama-2-70b-chat:",
         {
             input: {
                 prompt: " give me a 4 letter word that rhymes with lake",
@@ -26,6 +26,6 @@ replicate
     });
 */
 
-//const API_TOKEN = "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";
+//const API_TOKEN = "";
 
 // Create a new Ollama client instance with your Ollama ID
