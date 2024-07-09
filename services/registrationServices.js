@@ -72,8 +72,8 @@ async function sendVerificationCode(email, verificationCode) {
     const transporter = nodemailer.createTransport({
         service: "outlook",
         auth: {
-            user: "BQG-2FA@outlook.com",
-            pass: "Jamaicaisntarealcountry",
+            user: "",
+            pass: "",
         },
     });
 
